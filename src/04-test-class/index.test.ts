@@ -50,9 +50,7 @@ describe('BankAccount', () => {
   test('fetchBalance should return number in case if request did not fail', async () => {
     const money = getBankAccount(100);
     const balance = await money.fetchBalance();
-
-    // Проверяем, что balance не равен null
-    if (expect(balance) !== null) {
+    if (balance !== null) {
       expect(typeof balance).toBe('number');
       expect(balance).toBeGreaterThanOrEqual(0);
       expect(balance).toBeLessThanOrEqual(100);
